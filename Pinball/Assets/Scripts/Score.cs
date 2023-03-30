@@ -34,5 +34,6 @@ public class Score: Loader<Score>
     public void AddScore(int score)
     {
         ScoreTotal += score;
+        _scoreText.text = "Score: " + _score.ToString();
     }
 }

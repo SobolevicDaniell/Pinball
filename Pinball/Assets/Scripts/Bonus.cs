@@ -12,6 +12,7 @@ public class Bonus : MonoBehaviour
         if (other.tag == "Ball")
         {
             Score.Instance.AddScore(cost);
+            
         }
     }
 }

@@ -5,7 +5,6 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
 using TMPro;
-using Unity.UI;
 using UnityEngine.SceneManagement;
 
 public class Spawn : MonoBehaviour
@@ -32,20 +31,20 @@ public class Spawn : MonoBehaviour
         {
             Instantiate(ball, spawnPoint.transform.position, Quaternion.identity);
             _count++;
-            Again();
+            
         }
-    }
-
-    private void Again()
-    {
-        if (_count == ballsCount)
+        else if (other.tag == "Ball" && _count >= ballsCount)
         {
             _btn.SetActive(true);
         }
+        
     }
+
+    
 
     public void Restart()
     {
         SceneManager.LoadScene(0);
+        _btn.SetActive(false);
     }
 }
